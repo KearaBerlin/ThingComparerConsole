@@ -6,32 +6,32 @@ public class ThingComparerConsole {
   public static void main(String args[]) {
     System.out.println("*\n*");
     System.out.println("Welcome to Thing Comparer (Console Edition)!");
+    System.out.println("Please input two things you would like to compare!");
 
-    Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Enter a thing: ");
-    String thingOne = scanner.nextLine();
+    Scanner scanny = new scanner(System.in);
+    String apple = scanny.next();
+    String orange = scanny.next();
 
-    System.out.println("Enter another thing: ");
-    String thingTwo = scanner.nextLine();
-
-    System.out.println("Which is better - " + thingOne + " or " + thingTwo + "?");
-    System.out.println(getResponse(thingOne, thingTwo));
+    System.out.println(getResponse(apple, orange));
   }
 
-  private static String getResponse(String thingOne, String thingTwo) {
+  private static String getResponse(String apple, String orange) {
     Random random = new Random();
-    int responseInt = random.nextInt(2);
+    int responseInt = random.nextInt(3);
     int thingInt = random.nextInt(2);
 
-    String thing = thingOne;
+    String thing = apple;
     if (thingInt != 0) {
-      thing = thingTwo;
+      thing = orange;
     }
 
-    String response = "Clearly, " + thing + " is better. Everyone who's anyone knows that.";
-    if(responseInt != 0) {
-      response = "Well, " + thing + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
+    String response = "Clearly, " + apple + " is better. Everyone who's anyone knows that.";
+    if(responseInt == 1) {
+      response = "Well, " + orange + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
+    }
+    else if (responseInt == 2) {
+      response = "I like " + apple +  " better. Because I said so.";
     }
 
     return response;

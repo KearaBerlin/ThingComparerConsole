@@ -21,13 +21,17 @@ public class ThingComparerConsole {
 
   private static String getResponse(String thingOne, String thingTwo) {
     Random random = new Random();
-    int randomInt = random.nextInt(2);
-    String response = "";
-    if(randomInt == 0) {
-      response = "Clearly, " + thingOne + " is better. Everyone who's anyone knows that.";
+    int responseInt = random.nextInt(2);
+    int thingInt = random.nextInt(2);
+
+    String thing = thingOne;
+    if (thingInt != 0) {
+      thing = thingTwo;
     }
-    else {
-      response = thingTwo + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
+
+    String response = "Clearly, " + thing + " is better. Everyone who's anyone knows that.";
+    if(responseInt != 0) {
+      response = thing + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
     }
 
     return response;

@@ -9,9 +9,11 @@ public class ThingComparerConsole {
     System.out.println("Please input two things you would like to compare!");
 
 
-    Scanner scanny = new scanner(System.in);
-    String apple = scanny.next();
-    String orange = scanny.next();
+    Scanner scanny = new Scanner(System.in);
+    System.out.print("Thing One: ");
+    String apple = scanny.nextLine();
+    System.out.print("Thing Two: ");
+    String orange = scanny.nextLine();
 
     System.out.println(getResponse(apple, orange));
   }
@@ -26,12 +28,12 @@ public class ThingComparerConsole {
       thing = orange;
     }
 
-    String response = "Clearly, " + apple + " is better. Everyone who's anyone knows that.";
+    String response = "Clearly, " + thing + " is better. Everyone who's anyone knows that.";
     if(responseInt == 1) {
-      response = "Well, " + orange + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
+      response = "Well, " + thing + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
     }
     else if (responseInt == 2) {
-      response = "I like " + apple +  " better. Because I said so.";
+      response = "I like " + thing +  " better. Because I said so.";
     }
 
     return response;

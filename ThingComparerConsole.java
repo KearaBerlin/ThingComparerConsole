@@ -31,7 +31,7 @@ public class ThingComparerConsole {
 
     String response = "Clearly, " + thing + " is better. Everyone who's anyone knows that.";
     if(responseInt != 0) {
-      response = thing + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
+      response = "Well, " + thing + " is mediocre, but I'll go with it anyway. I'm feeling spicy today.";
     }
 
     return response;
